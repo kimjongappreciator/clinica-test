@@ -1,0 +1,42 @@
+#Application Configuration
+server:
+  port: 8091
+
+# To See H2 Console in Browser:
+# http://localhost:8091/h2-console
+# Enabling H2 Console
+spring:
+  h2:
+    console:
+      enabled: true
+  # ===============================
+  # DB
+  # ===============================
+  datasource:
+    url: jdbc:postgresql://localhost:5432/hospital
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: 1234
+
+  # ===============================
+  # JPA / HIBERNATE
+  # ===============================
+  jpa:
+    show-sql: true
+    #Agregar esta linea para cargar la BD
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: false
+        format_sql: false
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  sql:
+    init:
+      platform: postgres
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
