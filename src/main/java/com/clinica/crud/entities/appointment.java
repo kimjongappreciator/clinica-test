@@ -14,7 +14,7 @@ public class appointment {
     @GeneratedValue
     private Long id;
     @Column(length = 50, nullable = true)
-    private Date date = new Date();
+    private Date date;
     @Column(length = 50, nullable = true)
     private Long hospitalId;
     @Column(length = 50, nullable = true)
@@ -23,10 +23,18 @@ public class appointment {
     private Long doctorId;
 
     @Transient
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "hospital_id")
     private hospital hospital;
+
     @Transient
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "patient_dni")
     private patient patient;
+
     @Transient
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "doctor_dni")
     private doctor doctor;
 
 

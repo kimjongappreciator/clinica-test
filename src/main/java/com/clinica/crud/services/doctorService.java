@@ -5,6 +5,6 @@ import com.clinica.crud.entities.doctor;
 import java.util.List;
 
 public interface doctorService extends CrudService<doctor, Long>{
-    List<doctor> findBySpeciality();
-    doctor findByDni();
+    List<doctor> findBySpeciality(String string) throws Exception;
+    //doctor findByDni();
 }

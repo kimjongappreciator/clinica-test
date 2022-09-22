@@ -13,10 +13,10 @@ spring:
   # DB
   # ===============================
   datasource:
-    url: jdbc:h2:mem:productDB;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    driverClassName: org.h2.Driver
-    username: sa
-    password:
+    url: jdbc:postgresql://localhost:5432/hospital
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: 1234
 
   # ===============================
   # JPA / HIBERNATE
@@ -33,9 +33,10 @@ spring:
         show_sql: true
         use_sql_comments: false
         format_sql: false
+        dialect: org.hibernate.dialect.PostgreSQLDialect
   sql:
     init:
-      platform: h2
+      platform: postgres
 logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"

@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface patientRepository extends JpaRepository<patient, Long> {
-    patient findByDni(String dni) throws Exception;
+    //patient findByDni(String dni) throws Exception;
     }

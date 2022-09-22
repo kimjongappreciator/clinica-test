@@ -12,5 +12,5 @@ public interface appointmentRepository extends JpaRepository<appointment, Long> 
     List<appointment> findByPatientId(Long patientId) throws Exception;
     List<appointment> findByHospitalId(Long hospitalId) throws Exception;
     List<appointment> findByDoctorId(Long doctorId) throws Exception;
-    List<appointment> findByDate(Date date) throws Exception;
+    //List<appointment> findByDate(Date date) throws Exception;
 }
