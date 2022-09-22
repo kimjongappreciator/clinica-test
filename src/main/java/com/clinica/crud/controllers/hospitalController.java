@@ -15,6 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/hospital")
+@CrossOrigin
 public class hospitalController {
     @Autowired
     private hospitalService hservice;

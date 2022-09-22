@@ -17,6 +17,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/doctor")
 @Slf4j
+@CrossOrigin
 public class doctorController {
 
     @Autowired

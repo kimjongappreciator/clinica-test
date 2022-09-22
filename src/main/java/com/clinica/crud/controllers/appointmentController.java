@@ -17,6 +17,7 @@ import java.util.Optional;
 @RestController
 @Slf4j
 @RequestMapping("/appointment")
+@CrossOrigin
 public class appointmentController{
 
     @Autowired
